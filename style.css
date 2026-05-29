@@ -5,7 +5,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    word-break: break-all;
+    word-break: keep-all;
 }
 
 :root {
@@ -51,13 +51,13 @@ body {
 
 .text-stream-zone {
     width: 100%;
-    text-align: justify;
+    text-align: left;
 
-    /* [핵심 수정] 모바일 환경에서의 산돌 명조네오1 서체 적용 
-    */
     font-family: "sandoll-myeongjoneo1", sans-serif;
-    font-weight: 500;
+    font-weight: 700;
     font-style: normal;
+    font-size: 24px;
+    line-height: 1.5;
 }
 
 
@@ -77,12 +77,14 @@ body {
 
     .text-stream-zone {
         grid-column: span 5;
+
+        text-align: left;
         
         font-family: "sandoll-myeongjoneo1", sans-serif;
-        font-weight: 900;
+        font-weight: 700;
         font-style: normal;
         
         font-size: 40px;
-        line-height: 1.6;
+        line-height: 1.5;
     }
 }
