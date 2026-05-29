@@ -1,0 +1,88 @@
+/* -------------------------------------------------------------
+   01. RESET & CORE VARIABLES
+   ------------------------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    word-break: break-all;
+}
+
+:root {
+    --color-bg: #fbfbf9;
+    --color-text: #111111;
+    --site-padding: 0.8rem;
+}
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    /* 기본 서체는 고정폭으로 두어 여백이나 시스템 가이드는 차갑게 유지하고,
+       본문 스트림 영역만 명조체로 반전을 줍니다.
+    */
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    line-height: 1.6;
+    letter-spacing: -0.01em;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* -------------------------------------------------------------
+   02. CONTAINER LAYER
+   ------------------------------------------------------------- */
+.dossier-container {
+    width: 100%;
+    min-height: 100vh;
+    padding: var(--site-padding);
+}
+
+/* -------------------------------------------------------------
+   03. RESPONSIVE LAYOUT MATRIX
+   ------------------------------------------------------------- */
+
+/* A. 모바일 & 태블릿 환경 */
+.matrix-grid {
+    width: 100%;
+}
+
+.grid-spacer {
+    display: none;
+}
+
+.text-stream-zone {
+    width: 100%;
+    text-align: justify;
+
+    /* [핵심 수정] 모바일 환경에서의 산돌 명조네오1 서체 적용 
+    */
+    font-family: "sandoll-myeongjoneo1", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+
+/* B. 데스크탑 & 노트북 환경 (미디어 쿼리) */
+@media screen and (min-width: 1024px) {
+    .matrix-grid {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        column-gap: 1rem;
+        width: 100%;
+    }
+
+    .grid-spacer {
+        display: block;
+        grid-column: span 2;
+    }
+
+    .text-stream-zone {
+        grid-column: span 5;
+        
+        font-family: "sandoll-myeongjoneo1", sans-serif;
+        font-weight: 900;
+        font-style: normal;
+        
+        font-size: 40px;
+        line-height: 1.6;
+    }
+}
